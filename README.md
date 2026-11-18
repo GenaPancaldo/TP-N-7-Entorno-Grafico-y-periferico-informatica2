@@ -1,4 +1,5 @@
 # TP-N-7-Entorno-Grafico-y-periferico-informatica2
+* Trabajo realizado por Genaro Pancaldo y Facundo Ponzo
 ## Descripción del Proyecto
 Este proyecto implementa una interfaz gráfica de usuario desarrollada en **Processing** para el monitoreo y control bidireccional de entradas y salidas digitales de una placa **Arduino** a través de comunicación serie (USB).
 
