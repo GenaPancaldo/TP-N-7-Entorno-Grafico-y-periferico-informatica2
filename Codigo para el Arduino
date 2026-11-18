@@ -1,0 +1,69 @@
+const int pinE1 = 2;
+const int pinE2 = 3;
+const int pinL1 = 8;
+const int pinL2 = 9;
+
+
+bool estadoL1 = false;
+bool estadoL2 = false;
+
+
+bool ultimoE1 = HIGH;
+bool ultimoE2 = HIGH;
+
+void setup() {
+  Serial.begin(9600);
+ 
+ 
+  pinMode(pinE1, INPUT_PULLUP);
+  pinMode(pinE2, INPUT_PULLUP);
+  
+  pinMode(pinL1, OUTPUT);
+  pinMode(pinL2, OUTPUT);
+}
+
+void loop() {
+
+  bool actualE1 = !digitalRead(pinE1);
+  bool actualE2 = !digitalRead(pinE2);
+
+
+  if (actualE1 == true && ultimoE1 == false) {
+    estadoL1 = !estadoL1;
+    delay(50);
+  }
+  
+
+  if (actualE2 == true && ultimoE2 == false) {
+    estadoL2 = !estadoL2;
+    delay(50);
+  }
+
+  ultimoE1 = actualE1;
+  ultimoE2 = actualE2;
+
+
+  if (Serial.available() > 0) {
+    char comando = Serial.read();
+    if (comando == 'A') {
+      estadoL1 = !estadoL1;
+    } else if (comando == 'B') {
+      estadoL2 = !estadoL2; 
+    }
+  }
+
+
+  digitalWrite(pinL1, estadoL1);
+  digitalWrite(pinL2, estadoL2);
+
+
+  Serial.print(actualE1);
+  Serial.print(",");
+  Serial.print(actualE2);
+  Serial.print(",");
+  Serial.print(estadoL1);
+  Serial.print(",");
+  Serial.println(estadoL2);
+
+  delay(50);
+}
