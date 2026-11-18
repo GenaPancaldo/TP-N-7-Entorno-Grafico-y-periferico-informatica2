@@ -9,11 +9,10 @@ Este proyecto implementa una interfaz gráfica de usuario desarrollada en **Proc
 
 ## Conexiones
 
-| Componente | Pin en Arduino | Configuración |
-| **Pulsador E1** | Pin Digital `2` | Configurado como `INPUT_PULLUP` (conectar el otro terminal a `GND`) |
-| **Pulsador E2** | Pin Digital `3` | Configurado como `INPUT_PULLUP` (conectar el otro terminal a `GND`) |
-| **LED L1** | Pin Digital `8` | En serie con resistencia limitadora de $220\Omega$ hacia `GND` |
-| **LED L2** | Pin Digital `9` | En serie con resistencia limitadora de $220\Omega$ hacia `GND` |
+* | **Pulsador E1** | Pin Digital `2` | Configurado como `INPUT_PULLUP` (conectar el otro terminal a `GND`) |
+* | **Pulsador E2** | Pin Digital `3` | Configurado como `INPUT_PULLUP` (conectar el otro terminal a `GND`) |
+* | **LED L1** | Pin Digital `8` | En serie con resistencia limitadora de $220\Omega$ hacia `GND` |
+* | **LED L2** | Pin Digital `9` | En serie con resistencia limitadora de $220\Omega$ hacia `GND` |
 
 
 ## Instrucciones de Ejecución
